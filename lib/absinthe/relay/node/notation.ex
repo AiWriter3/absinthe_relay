@@ -81,7 +81,8 @@ defmodule Absinthe.Relay.Node.Notation do
   defp field_body do
     quote do
       @desc "The id of an object."
-      arg :id, non_null(:id)
+      arg :id, :id
+      arg :code, :string
 
       middleware {Absinthe.Relay.Node, :resolve_with_global_id}
     end
